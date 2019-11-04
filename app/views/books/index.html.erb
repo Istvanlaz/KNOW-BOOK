@@ -1,0 +1,12 @@
+<h1>Here are your books</h1>
+
+<% @books.each do |book| %>
+  <ul>
+    <li><h3><%= book.title %></h3></li>
+    <li><h3><%= book.author %></h3></li>
+    <li><h3><%= book.rating %></h3></li>
+    <p><%= link_to "Details", book_path(book) %></p>
+  </ul>
+<% end %>
+
+
