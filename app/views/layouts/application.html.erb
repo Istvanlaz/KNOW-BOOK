@@ -8,7 +8,18 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  <title>Tutorialspoint</title> <%# added %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %><%# added %>
+
+
+
   </head>
+<%# added %>
+  <div class = "container" style = "padding-top:20px;">
+         <%= yield %><%# added %>
+      </div>
     <body>
       <%= yield %>
       <%= javascript_include_tag 'application' %>
@@ -50,7 +61,9 @@
       </form>
     </div>
   </nav>
+<%# added %>
 
+<%# added %>
   <!-- Facebook
           <a class="fb-ic">
             <i class="fab fa-facebook-f white-text mr-4"> </i>
