@@ -1,8 +1,13 @@
 <h1><%= @book.title %></h1>
+<h2><%= @book.author %></h2>
+<p><%= @book.publishing_year %> -- <%= @book.rating %></p>
 
 <div>
+  <p class="btn"><%= link_to "Back to all books", books_path %></p>
 
-<p class="btn"><%= link_to "Back to all books", books_path %></p>
+  <p class="btn"><%= link_to "Delete Book", book_path, method: :delete, data: { confirm: "Are you Sure about Deleting this Book?" } %></p>
+
+  <p class="btn"><%= link_to "Edit Book", edit_book_path(@book) %></p>
 </div>
 
 <p class="btn"><%= link_to "Add a Review", book_path(@book) %></p>
