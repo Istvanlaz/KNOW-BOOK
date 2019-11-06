@@ -8,13 +8,6 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  <title>Tutorialspoint</title> <%# added %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-      <%= csrf_meta_tags %><%# added %>
-
-
-
   </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-space-between">
@@ -22,7 +15,6 @@
           <a class="navbar-brand" href="#">
             <%= image_tag("logo_knowbook.png", width: 70 , alt: "alttext") %>
           </a>
-
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -53,7 +45,7 @@
           </ul> -->
           <form class="form-inline">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <button class="btn btn-outline-secondary" color="#E98E5A" type="submit">Search</button>
           </form>
         </div>
         <div>
@@ -93,7 +85,7 @@
           </a> -->
 
         <!-- Footer Links -->
-        <div class="container text-center text-md-left mt-5">
+        <div class="container text-center text-md-left mt-3">
 
           <!-- Grid row -->
           <div class="row mt-3 dark-grey-text">
@@ -104,7 +96,7 @@
               <!-- Content -->
               <h6 class="text-uppercase font-weight-bold">KNOW-BOOK</h6>
               <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>Download, buy, sell, lend any book you want on KNOW-BOOK !</p>
+              <p>Download and read any book you want on KNOW-BOOK !</p>
 
             </div>
             <!-- Grid column -->
@@ -156,7 +148,7 @@
               <h6 class="text-uppercase font-weight-bold">Contact us</h6>
               <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
               <p>
-                <i class="fas fa-home mr-3"></i> California, Silicon Valley 10012, US</p>
+                <i class="fas fa-home mr-3"></i> Cantersteen 10, 1000 Brussels, Belgium</p>
               <p>
                 <a href="mailto:info@knowbook.com?subject=need help"><i class="fas fa-envelope mr-3"></i> info@knowbook.com</a></p>
               <p>
@@ -173,7 +165,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center text-black-50 py-3">© 2019 Copyright:
-          <a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/"> KNOW-BOOK.com</a>
+          <a class="dark-grey-text" href="#"> KNOW-BOOK.com</a>
         </div>
         <!-- Copyright -->
       </footer>
