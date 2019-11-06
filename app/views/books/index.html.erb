@@ -1,22 +1,30 @@
-<h1>Here are your books</h1>
+<div class="container-main">
+  <h1>Here are your books</h1>
 
-<% @books.each do |book| %>
-  <ul>
-    <li><h3><%= book.title %></h3></li>
-    <li><h3><%= book.author %></h3></li>
-    <li><h3><%= book.average_rating %></h3></li>
-
+  <% @books.each do |book| %>
+    <div class="card-book">
+      <div class="img-top">
+        <h2><%= book.title %></h2>
+      </div>
+      <div class="book-title"><%= book.title %></div>
+      <div class="book-content">
+        <div>
+          <h4><%= book.author %></h4>
+          <h5><%= book.publishing_year %> -- <%= book.average_rating %></h5>
+        </div>
+      </div>
+    </div>
     <p><%= link_to "Details", book_path(book) %></p>
-  </ul>
-<% end %>
+  <% end %>
 
-<p><%= link_to "Create a New Book?", new_book_path %></p>
+  <p><%= link_to "Create a New Book?", new_book_path %></p>
 
 
-<% if !flash[:notice].blank? %>
-   <div class = "alert alert-info">
-      <%= flash[:notice] %>
-   </div>
-<% end %>
+  <% if !flash[:notice].blank? %>
+     <div class = "alert alert-info">
+        <%= flash[:notice] %>
+     </div>
+  <% end %>
 
-<br />
+  <br />
+</div>
