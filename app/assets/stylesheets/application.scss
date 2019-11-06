@@ -11,3 +11,51 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.form-inline{
+  display: flex;
+  justify-content: space-between;
+
+}
+.nav-item{
+  text-align: left;
+}
+
+.collapse{
+  justify-content: center;
+}
+.btn{
+  color: #E98E5A;
+}
+.dark-grey-text :hover {
+  color: #E98E5A;
+}
+.footer-copyright :hover{
+  color: #E98E5A;
+}
+footer{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+padding-top:50px;
+
+height:50px;
+
+
+}
+// .container{
+//   width:100%;
+//   // padding-top:50px;
+//   height:50px;
+// }
+#footer{
+  background-color: white;
+  padding : 20px;
+
+}
+
+

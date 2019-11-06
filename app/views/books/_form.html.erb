@@ -2,7 +2,6 @@
   <%= f.input :title %>
   <%= f.input :author %>
   <%= f.input :publishing_year %>
-  <%= f.input :resume %>
-  <%= f.input :rating %>
+  <%= f.input :resume, required: true %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

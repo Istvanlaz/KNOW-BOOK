@@ -1,8 +1,22 @@
 class Book < ApplicationRecord
   has_many :users
+  has_many :ratings, dependent: :destroy
+  has_one_attached :resume
 
   validates :title, presence: true
   validates :author, presence: true
   validates :publishing_year, presence: true
-  validates :rating, inclusion: { in: 0..5 }, numericality: { only_integer: true }
+
+  validate :resume_attached?
+
+
+  def average_rating
+    return 0 if ratings.empty?
+
+    (ratings.map(&:rating).sum / ratings.count).round 2
+  end
+
+  def resume_attached?
+    return errors.add(:resume, "must add an resume") unless resume.attached?
+  end
 end
