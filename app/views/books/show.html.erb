@@ -15,5 +15,20 @@
 
 <p class="btn"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
 
-<p class="btn"><%= link_to "PDF", url_for(@book.resume) %></p>
+<% if @book.resume.attached? %>
+  <%= link_to "PDF", url_for(@book.resume) %>
+<% else %>
+  <p>"You have not uploaded a pdf"</p>
+<% end %>
 
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+
+
+</table>

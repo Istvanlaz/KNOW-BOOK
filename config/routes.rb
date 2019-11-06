@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'pages#home'
-  resources :resumes, only: [:index, :new, :create, :destroy]
   resources :books do
     resources :ratings
   end
