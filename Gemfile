@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+
+gem "aws-sdk-s3", require: false
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'carrierwave', '~> 1.2'
@@ -10,6 +12,7 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 gem 'cloudinary', '~> 1.9.1'
+
 
 
 gem 'autoprefixer-rails'
