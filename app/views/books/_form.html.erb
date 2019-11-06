@@ -1,0 +1,8 @@
+<%= simple_form_for [@book] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :publishing_year %>
+  <%= f.input :resume %>
+  <%= f.input :rating %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
