@@ -6,6 +6,8 @@ class Book < ApplicationRecord
   validates :publishing_year, presence: true
 
   def average_rating
+    return 0 if ratings.empty?
+
     (ratings.map(&:rating).sum / ratings.count).round 2
   end
 end
