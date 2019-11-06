@@ -1,21 +1,11 @@
 <h1>Here are your books</h1>
 
-<p>Here will be an extensive list of all your books, interests, etc..</p>
-<p>Just be patient bruh</p>
-<p>It will come</p>
-<p>It will come</p>
-<p>In due time</p>
-<p>--</p>
-<p>Just chill down</p>
-<p>--</p>
-<p>Yours sincerely,</p>
-<p>The KNOW-BOOK team</p>
-
 <% @books.each do |book| %>
   <ul>
     <li><h3><%= book.title %></h3></li>
     <li><h3><%= book.author %></h3></li>
-    <li><h3><%= book.rating %></h3></li>
+    <li><h3><%= book.average_rating %></h3></li>
+
     <p><%= link_to "Details", book_path(book) %></p>
   </ul>
 <% end %>
