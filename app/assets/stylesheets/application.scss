@@ -11,3 +11,19 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.form-inline{
+  display: flex;
+  justify-content: space-between;
+
+}
+.nav-item{
+  text-align: left;
+}
+
+.collapse{
+  justify-content: center;
+}
+.btn{
+  color: #E98E5A;
+}
