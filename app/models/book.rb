@@ -1,5 +1,4 @@
 class Book < ApplicationRecord
-  has_many :users
   has_many :ratings, dependent: :destroy
   has_one_attached :resume
 
@@ -9,6 +8,7 @@ class Book < ApplicationRecord
 
   validate :resume_attached?
 
+  belongs_to :user
 
   def average_rating
     return 0 if ratings.empty?
