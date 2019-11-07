@@ -1,2 +1,123 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
+.container-main img {
+  display: block;
+  object-fit: cover;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.6) contrast(1.3);
+}
+.title_library{
+  color: #3c3c3c;
+  position: absolute;
+  top:25%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-family: "Times New Roman", serif;
+}
+// .flip-card{
+//   background-color: transparent;
+//   width:150px;
+//   height:150px;
+//   border:1px solid #f1f1f1;
+//   perspective: 1000px;
+// }
+// .flip-card-inner{
+//   position: relative;
+//   width: 100%;
+//   height:100%;
+//   text-align: center;
+//   transition: transform 0.8s;
+//   transform-style: preserve-3d;
+// }
+// .flip-card:hover .flip-card-inner{
+//   transform: rotateY(180deg);
+// }
+// .flip-card-front, .flip-card-back{
+//   position: absolute;
+//   width: 100%;
+//   height:100%;
+//   backface-visibility: hidden;
+// }
+// .flip-card-front{
+//   background-color: #bbb;
+//   color: black;
+// }
+// .flip-card-back{
+//   background-color: rgb(235,235,235);
+//   color: black;
+//   transform: rotateY(180deg);
+// }
+.index_banner {
+  background-image: url('https://images.unsplash.com/photo-1517770413964-df8ca61194a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+.card-book-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #3c3c3c;
+  font-style: italic;
+}
+.card-book-author {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #3c3c3c;
+  margin-bottom: 16px;
+}
+.card-book-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3c3c3c;
+}
+.card-book-info {
+  padding: 8px;
+}
+.image-card {
+    object-fit: fill;
+}
+.btn-details {
+  margin-top: 4px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #E98E5A;
+  padding: 4px 8px;
+  color: #E98E5A;
+  font-size: 12px;
+  &:hover {
+    text-decoration: none!important;
+    background-color: #E98E5A;
+    color: #ffffff;
+  }
+}
+.btn-details2 {
+  margin-top: 50px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #E98E5A;
+  padding: 8px 24px;
+  color: #E98E5A;
+  font-size:16px;
+  &:hover {
+    text-decoration: none!important;
+    background-color: #E98E5A;
+    color: #ffffff;
+  }
+}
+.new-book{
+  position: absolute;
+  margin-bottom: 0px;
+}
