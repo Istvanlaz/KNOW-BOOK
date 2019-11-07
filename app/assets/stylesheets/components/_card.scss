@@ -18,15 +18,6 @@
   filter: brightness(0.6) contrast(1.3);
 }
 
-.img-top h2 {
-  z-index: 999;
-  color: white;
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
-}
-
-
 .book-content {
   padding: 8px;
   display: flex;
@@ -36,16 +27,6 @@
   font-size: 12px;
   top: 5px;
   line-height: 16px;
-}
-
-.book-title {
-  display: block;
-  position: absolute;
-  color: rgb(240,240,240);
-  width: 50%;
-  font-weight: bold;
-  bottom: 100px;
-  margin-left: 10%;
 }
 
 
