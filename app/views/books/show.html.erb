@@ -6,12 +6,18 @@
 <div>
   <p class="btn"><%= link_to "Back to all books", books_path %></p>
 
-  <p class="btn"><%= link_to "Delete Book", book_path, method: :delete, data: { confirm: "Are you Sure about Deleting this Book?" } %></p>
+  <% if policy(@book).destroy? %>
+    <p class="btn"><%= link_to "Delete Book", book_path, method: :delete, data: { confirm: "Are you Sure about Deleting this Book?" } %></p>
+  <% end %>
 
-  <p class="btn"><%= link_to "Edit Book", edit_book_path(@book) %></p>
+  <% if policy(@book).edit? %>
+    <p class="btn"><%= link_to "Edit Book", edit_book_path(@book) %></p>
+  <% end %>
 </div>
 
-<p class="btn"><%= link_to "Add a Review", book_path(@book) %></p>
+
+  <p class="btn"><%= link_to "Add a Review", book_path(@book) %></p>
+
 
 <p class="btn"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
 
