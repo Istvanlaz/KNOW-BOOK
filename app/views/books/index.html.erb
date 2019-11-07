@@ -1,32 +1,36 @@
 <div class="container-main">
-  <h1>Here are your books</h1>
-
-  <% @books.each do |book| %>
-    <div class="card-book">
-      <div class="img-top"></div>
-      <div class="book-content">
-        <div>
-          <h5><%= book.title %></h5>
-          <br>
-          <p><strong><%= book.author %></strong></p>
-          <p id="p-rating"><%= book.publishing_year %> -- <%= book.average_rating %></p>
-        </div>
-      </div>
-    </div>
-    <% if policy(book).show? %>
-      <p id="btn-details" class="btn"><%= link_to "Details", book_path(book) %></p>
-    <% end %>
-  <% end %>
-  <br>
-  <% if policy(Book).new? %>
-    <p class="btn"><%= link_to "Create a New Book?", new_book_path %></p>
-  <% end %>
+  <div class="index_banner d-flex flex-column align-items-center">
+       <h1 class="title_library">BOOKS LIBRARY</h1>
+       <div class="container">
+          <div class="row">
+            <% @books.each do |book| %>
+             <div class="card d-flex flex-column align-items-center">
+                <img class= "image-card" src="https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial_6th_edition/images/cover-web.png" alt="book-cover" style="width:250px;height:200px;">
+              <div class="card-book-info d-flex flex-row justify-content-between align-items-center">
+                <div class="d-flex flex-column justify-content-start">
+                  <h2 class="card-book-title"><%= book.title %></h2>
+                  <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h4 class="card-book-author"><%= book.author %><%= book.publishing_year %></h4>
+                    <% if policy(book).show? %>
+                      <p><%= link_to "Details", book_path(book), class: 'btn-details' %></p>
+                    <% end %>
+                </div>
+                </div>
+              </div>
+             </div>
+            <% end %>
+          </div>
+       </div>
+       <% if policy(Book).new? %>
+          <%= link_to "Create a New Book?", new_book_path, class: 'btn-details2' %>
+       <% end %>
+  </div>
 
   <% if !flash[:notice].blank? %>
      <div class = "alert alert-info">
         <%= flash[:notice] %>
      </div>
+
   <% end %>
 
-  <br />
 </div>
