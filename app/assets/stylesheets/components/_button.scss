@@ -33,3 +33,40 @@
   color: rgba(225,225,225,1);
   text-decoration: none;
 }
+
+
+.button-show {
+  margin: 10px;
+  display: flex;
+  color: rgba(28, 50, 68, 0.8);
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 50px;
+  border: 1px solid rgba(28, 50, 68, 0.8);
+  border-radius: 25px;
+}
+
+.button-show:hover {
+  margin: 10px;
+  display: flex;
+  color: rgba(28, 50, 68, 1);
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 50px;
+  border: 1px solid rgba(28, 50, 68, 1);
+  border-radius: 25px;
+}
+
+.button-show a {
+  color: rgba(28, 50, 68, 0.8);
+  text-decoration: none;
+}
+
+.button-show:hover a {
+  color: rgba(28, 50, 68, 1);
+  text-decoration: none;
+}
