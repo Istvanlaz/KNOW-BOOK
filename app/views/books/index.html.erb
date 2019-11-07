@@ -13,11 +13,14 @@
         </div>
       </div>
     </div>
-    <p class="btn"><%= link_to "Details", book_path(book) %></p>
+    <% if policy(book).show? %>
+      <p id="btn-details" class="btn"><%= link_to "Details", book_path(book) %></p>
+    <% end %>
   <% end %>
   <br>
-  <p class="btn"><%= link_to "Create a New Book?", new_book_path %></p>
-
+  <% if policy(Book).new? %>
+    <p class="btn"><%= link_to "Create a New Book?", new_book_path %></p>
+  <% end %>
 
   <% if !flash[:notice].blank? %>
      <div class = "alert alert-info">
