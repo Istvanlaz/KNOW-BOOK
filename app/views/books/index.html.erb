@@ -3,21 +3,20 @@
 
   <% @books.each do |book| %>
     <div class="card-book">
-      <div class="img-top">
-        <h2><%= book.title %></h2>
-      </div>
-      <div class="book-title"><%= book.title %></div>
+      <div class="img-top"></div>
       <div class="book-content">
         <div>
-          <h4><%= book.author %></h4>
-          <h5><%= book.publishing_year %> -- <%= book.average_rating %></h5>
+          <h5><%= book.title %></h5>
+          <br>
+          <p><strong><%= book.author %></strong></p>
+          <p id="p-rating"><%= book.publishing_year %> -- <%= book.average_rating %></p>
         </div>
       </div>
     </div>
-    <p><%= link_to "Details", book_path(book) %></p>
+    <p class="btn"><%= link_to "Details", book_path(book) %></p>
   <% end %>
-
-  <p><%= link_to "Create a New Book?", new_book_path %></p>
+  <br>
+  <p class="btn"><%= link_to "Create a New Book?", new_book_path %></p>
 
 
   <% if !flash[:notice].blank? %>
