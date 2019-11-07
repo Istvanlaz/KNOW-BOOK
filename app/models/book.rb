@@ -7,8 +7,7 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :publishing_year, presence: true
 
-  validate :resume_attached?
-
+  #validate :resume_attached?
 
   def average_rating
     return 0 if ratings.empty?
