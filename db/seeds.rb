@@ -9,7 +9,7 @@ puts 'Cleaning database...'
 Book.destroy_all
 User.destroy_all
 Category.destroy_all
-
+Review.destroy_all
 
 puts 'Creating awesome users...'
 

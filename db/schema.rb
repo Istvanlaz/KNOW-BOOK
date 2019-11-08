@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(version: 2019_11_08_134746) do
     t.integer "publishing_year"
     t.float "rating"
     t.bigint "category_id"
-    t.bigint "user_id"
     t.string "image"
-    t.bigint "book_id"
-    t.index ["book_id"], name: "index_books_on_book_id"
+    t.bigint "user_id"
+    t.bigint "reading_list_id"
     t.index ["category_id"], name: "index_books_on_category_id"
+    t.index ["reading_list_id"], name: "index_books_on_reading_list_id"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -80,13 +80,6 @@ ActiveRecord::Schema.define(version: 2019_11_08_134746) do
     t.index ["user_id"], name: "index_readings_on_user_id"
   end
 
-  create_table "resumes", force: :cascade do |t|
-    t.string "name"
-    t.string "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
@@ -105,15 +98,15 @@ ActiveRecord::Schema.define(version: 2019_11_08_134746) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean "admin"
     t.string "username"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "books", "books"
   add_foreign_key "books", "categories"
+  add_foreign_key "books", "reading_lists"
   add_foreign_key "books", "users"
   add_foreign_key "ratings", "books"
   add_foreign_key "readings", "books"
