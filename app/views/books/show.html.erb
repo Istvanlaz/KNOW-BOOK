@@ -46,9 +46,25 @@
           <p>The 19th edition of this market-leading text provides a comprehensive overview of financial accounting and reporting, with the aim of ensuring you are able to prepare and also critically discuss IFRS compliant financial statements. With balanced coverage of theoretical principles and up-to-date practical application of current international standards, the authors provide essential knowledge for advancing your studies and career.</p>
           <a>Read More</a>
         </div>
+        <br>
+        <br>
+        <div class="reviews-container">
+          <% @reviews.each do |review| %>
+            <div class="review card">
+              <%= review.content %>
+              <br>
+              <br>
+              --<%= User.find(@book.user_id).username.upcase %>
+            </div>
+          <% end %>
+        </div>
+        <div class="review-form">
+          <%= simple_form_for [@book, @review] do |f| %>
+            <%= f.input :content %>
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+          <% end %>
+        </div>
         <div>
-          <p class="btn btn-show"><%= link_to "Add a Review", book_path(@book) %></p>
-
           <p class="btn btn-show"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
         </div>
       </div>
