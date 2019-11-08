@@ -121,3 +121,70 @@
   position: absolute;
   margin-bottom: 0px;
 }
+.container-sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+width: 1284px;
+height: 695px;
+}
+.navbar-brand {
+  height: 60px;
+}
+.bouton-login {
+    background: #0089ff;
+    color: #fff!important;
+    font-weight: 600;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    font-size: 14px;
+    height: 48px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(36,129,215,0.05), 0 2px 3px rgba(36,129,215,0.04);
+    display: block;
+    width: 100%
+}
+.g-signin2 {
+  display: block;
+  margin: 0 419px;
+  width: 446px;
+}
+.sign-up-label {
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5669;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.banner3 {
+  background-image: asset-url('banner3.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 50px 0;
+}
+.title-signup {
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #24374e;
+    margin: 0 0 8px;
+    margin-top: 120px!important;
+}
+.desc-signup {
+    font-size: 18px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    color: #4a5669;
+}
+.body-sign-up {
+    color: #0089ff;
+    font-weight: 600;
+    margin-top: -60px!important;
+}
