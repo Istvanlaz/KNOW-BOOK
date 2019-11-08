@@ -1,6 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
 
+@import "show";
+@import "login";
+
 .container-main img {
   display: block;
   object-fit: cover;
