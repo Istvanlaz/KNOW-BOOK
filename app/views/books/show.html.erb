@@ -2,8 +2,9 @@
   <div class="banner-small">
     <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="All the Books You Need">
     <div class="txt-ban">
-      <h2><strong>Some text</strong></h2>
-      <h3>Some other text</h3>
+      <h2><strong>KNOW-BOOK</strong></h2>
+      <h5>The best App for any student who wishes to have their books at hand at any time.</h5>
+      <br>
       <p class="btn button-medium-small"><%= link_to "All books", books_path %></p>
     </div>
   </div>
@@ -19,11 +20,11 @@
           <% end %>
         </div>
         <div class="btn-show">
-          <p class="btn button-show"><%= link_to "Add to reading list", books_path %></p>
+          <p id="reading_list" class="btn button-show"><%= link_to "Add to reading list - Available Soon..! -", book_path %></p>
         </div>
           <br>
         <div class="book-content column">
-          <p>### pages</p>
+          <p><%= rand(500..1500) %> pages</p>
           <p>English</p>
           <p>PDF</p>
         </div>
@@ -46,6 +47,9 @@
           <a>Read More</a>
         </div>
         <br>
+        <div id="buttons-descr">
+          <p class="btn button-show"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
+        </div>
         <br>
         <div class="reviews-container">
           <% @reviews.each do |review| %>
@@ -64,10 +68,6 @@
           <% end %>
         </div>
         <div>
-        <div id="buttons-descr">
-          <p class="btn btn-show"><%= link_to "Add a Review", book_path(@book) %></p>
-          <p class="btn btn-show"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
-        </div>
       </div>
     </div>
 

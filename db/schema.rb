@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_105217) do
+ActiveRecord::Schema.define(version: 2019_11_08_134746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,9 @@ ActiveRecord::Schema.define(version: 2019_11_08_105217) do
     t.bigint "category_id"
     t.string "image"
     t.bigint "user_id"
+    t.bigint "reading_list_id"
     t.index ["category_id"], name: "index_books_on_category_id"
+    t.index ["reading_list_id"], name: "index_books_on_reading_list_id"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -62,6 +64,11 @@ ActiveRecord::Schema.define(version: 2019_11_08_105217) do
     t.bigint "book_id"
     t.float "rating"
     t.index ["book_id"], name: "index_ratings_on_book_id"
+  end
+
+  create_table "reading_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "readings", force: :cascade do |t|
@@ -99,6 +106,7 @@ ActiveRecord::Schema.define(version: 2019_11_08_105217) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "categories"
+  add_foreign_key "books", "reading_lists"
   add_foreign_key "books", "users"
   add_foreign_key "ratings", "books"
   add_foreign_key "readings", "books"
