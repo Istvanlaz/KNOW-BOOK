@@ -8,36 +8,36 @@
 puts 'Cleaning database...'
 Book.destroy_all
 # User.destroy_all
-# Category.destroy_all
+Category.destroy_all
 # Review.destroy_all
 
 # puts 'Creating awesome users...'
 
 
-# Category.create!({
-#   name: "front-end"
-# })
-# Category.create!({
-#   name: "back-end"
-# })
-# Category.create!({
-#   name: "fullstack"
-# })
-# Category.create!({
-#   name: "network"
-# })
-# Category.create!({
-#   name: "machine-learning"
-# })
-# Category.create!({
-#   name: "hardware"
-# })
-# Category.create!({
-#   name: "Articial-Intelligence"
-# })
+Category.create!({
+  name: "front-end"
+})
+Category.create!({
+  name: "back-end"
+})
+Category.create!({
+  name: "fullstack"
+})
+Category.create!({
+  name: "network"
+})
+Category.create!({
+  name: "machine-learning"
+})
+Category.create!({
+  name: "hardware"
+})
+Category.create!({
+  name: "Articial-Intelligence"
+})
 
-# categories = Category.all
-# puts "creating some usefull categories"
+categories = Category.all
+puts "creating some usefull categories"
 
 # User.create!( {
 #   username: "Jery",
