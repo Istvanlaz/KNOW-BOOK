@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_105217) do
+ActiveRecord::Schema.define(version: 2019_11_08_134746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,10 @@ ActiveRecord::Schema.define(version: 2019_11_08_105217) do
     t.integer "publishing_year"
     t.float "rating"
     t.bigint "category_id"
-    t.string "image"
     t.bigint "user_id"
+    t.string "image"
+    t.bigint "book_id"
+    t.index ["book_id"], name: "index_books_on_book_id"
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
@@ -64,6 +66,11 @@ ActiveRecord::Schema.define(version: 2019_11_08_105217) do
     t.index ["book_id"], name: "index_ratings_on_book_id"
   end
 
+  create_table "reading_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "readings", force: :cascade do |t|
     t.bigint "book_id"
     t.bigint "user_id"
@@ -71,6 +78,13 @@ ActiveRecord::Schema.define(version: 2019_11_08_105217) do
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_readings_on_book_id"
     t.index ["user_id"], name: "index_readings_on_user_id"
+  end
+
+  create_table "resumes", force: :cascade do |t|
+    t.string "name"
+    t.string "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -91,13 +105,14 @@ ActiveRecord::Schema.define(version: 2019_11_08_105217) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "username"
     t.boolean "admin"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "books", "books"
   add_foreign_key "books", "categories"
   add_foreign_key "books", "users"
   add_foreign_key "ratings", "books"
