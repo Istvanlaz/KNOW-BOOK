@@ -14,31 +14,38 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
+      <li class="nav-item active">
+     <!--  <% if user_signed_in? %>
           <%= link_to "All Books", books_path, class: "nav-link" %>
+      <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
-        <%= form_tag movies_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a movie"
-          %>
-          <%= submit_tag "Search", class: "btn btn-outline-secondary" %>
-        <% end %>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+      <% end %> -->
+    </ul>
+  </div>
+  <form class="form-inline">
+    <%= form_tag books_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a book"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </form>
+  <div class="avatar-spot">
+    <% if user_signed_in? %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+    <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
             <%= link_to "My Books", "#", class: "dropdown-item" %>
             <%= link_to "My Favourites", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
   </div>
 </nav>
