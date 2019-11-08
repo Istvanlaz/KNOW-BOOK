@@ -7,7 +7,7 @@ class BooksController < ApplicationController
       sql_query = "title ILIKE :query OR author ILIKE :query"
       @books = Book.where(sql_query, query: "%#{params[:query]}%")
     else
-    @books = policy_scope(Book).order(created_at: :desc)
+      @books = policy_scope(Book).order(created_at: :desc)
     end
   end
 
