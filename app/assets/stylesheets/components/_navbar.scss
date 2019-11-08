@@ -1,76 +1,31 @@
-.navbar-lewagon {
+.navbar {
+  display: flex;
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 1;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar .navbar-brand img {
   width: 40px;
 }
-.navbar-lewagon {
-  justify-content: space-between;
-  background-color: transparent;
-  transition: 0.5s background-color ease;
-  .active {
-    display: none;
-  }
-}
 
-.navbar-lewagon-white {
-  background-color: #5C1D28;
-}
-#iconlogin {
-  height: 30px;
-  width: 30px;
-}
+.form-inline{
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-.navbar-title {
-  color: white;
-  display: none;
 }
-.active-white {
-  color: white;
+.nav-item{
+  float: right;
+  margin: 0 10px 0 0;
+  vertical-align: center ;
 }
-
-.nav-link {
-  color: white;
-}
-#homewhite {
-  color: white;
-  font-size: 20px;
-  margin-right: 8px;
-}
-#navbarDropdown {
-  font-size: 20px;
-  margin-top: 12px;
-  color: white;
-  height: 30px;
-  width: 50px;
-  margin-left: 10px;
-}
-.dropdown {
-  cursor: pointer;
-}
-.dropdown-toggle:empty::after {
-  display: none;
-}
-.navbar-title {
-  font-style: italic;
-  font-size: 28px;
-  font-weight: 700;
-}
-.dropdown-item {
-  font-size: 16px;
-}
-.register {
-  background-color: #5C1D28;
-  color: white;
-  margin-bottom: -10px;
-  font-weight: 700;
-}
-.text-bold {
-  font-weight: 700;
+.avatar{
+  display:flex;
+  justify-content:flex-end;
 }
