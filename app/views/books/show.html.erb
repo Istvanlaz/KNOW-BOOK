@@ -1,66 +1,67 @@
+<div class="container-main">
+  <div class="banner-small">
+    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="All the Books You Need">
+    <div class="txt-ban">
+      <h2><strong>Some text</strong></h2>
+      <h3>Some other text</h3>
+      <p class="btn button-medium-small"><%= link_to "All books", books_path %></p>
+    </div>
+  </div>
 
-<div class="banner-small">
-  <h1><%= @book.title %></h1>
-  <h2><%= @book.author %></h2>
-  <p><%= @book.publishing_year%> -- <%= @book.average_rating %></p>
+  <div class="container-show">
+    <div class="container-left">
+      <div class="card-book">
+        <div class="img-book">
+          <img src="https://www.perlego.com/books/RM_Books/pearson_lm/9781292256047.jpg" alt="Some descritpion">
+          <% if @book.resume.attached? %>
+            <%= link_to "PDF", url_for(@book.resume) %>
+          <% else %>
+            <p>"You have not uploaded a pdf"</p>
+          <% end %>
+        </div>
+        <div class="btn-show">
+          <p class="btn button-show"><%= link_to "Add to reading list", books_path %></p>
+        </div>
+          <br>
+        <div class="book-content column">
+          <p>### pages</p>
+          <p>English</p>
+          <p>PDF</p>
+        </div>
+      </div>
+    </div>
 
-<div class="banner-small">
-  <h2><strong>Some text</strong></h2>
-  <h3>Some other text</h3>
-  <p class="btn button-show"><%= link_to "Back to all books", books_path %></p>
-</div>
+    <div class="container-right">
+      <div class="card-description">
+        <div>
+          <h1 class="title"><%= @book.title %></h1>
+          <h2 class="author"><%= @book.author %></h2>
+            <br>
+          <p class="info">Year: <%= @book.publishing_year%> --  Rating: <%= @book.average_rating %></p>
+        </div>
+          <br>
+        <div>
+          <h2><strong>About This Book</strong></h2>
+            <br>
+          <p>The 19th edition of this market-leading text provides a comprehensive overview of financial accounting and reporting, with the aim of ensuring you are able to prepare and also critically discuss IFRS compliant financial statements. With balanced coverage of theoretical principles and up-to-date practical application of current international standards, the authors provide essential knowledge for advancing your studies and career.</p>
+          <a>Read More</a>
+        </div>
+        <div>
+          <p class="btn btn-show"><%= link_to "Add a Review", book_path(@book) %></p>
 
-<div class="container-show">
-  <div class="card-book">
-    <div class="img-book">
-      <img src="https://www.perlego.com/books/RM_Books/pearson_lm/9781292256047.jpg" alt="Some descritpion">
-      <% if @book.resume.attached? %>
-        <%= link_to "PDF", url_for(@book.resume) %>
-      <% else %>
-        <p>"You have not uploaded a pdf"</p>
+          <p class="btn btn-show"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <% if policy(@book).destroy? %>
+          <p class="btn btn-show"><%= link_to "Delete Book", book_path, method: :delete, data: { confirm: "Are you Sure about Deleting this Book?" } %></p>
+        <% end %>
+
+        <% if policy(@book).edit? %>
+          <p class="btn btn-show"><%= link_to "Edit Book", edit_book_path(@book) %></p>
       <% end %>
     </div>
-    <div class="btn-show">
-      <p class="btn button-show"><%= link_to "Add to reading list", books_path %></p>
-    </div>
-      <br>
-    <div class="book-content column">
-      <p>### pages</p>
-      <p>English</p>
-      <p>PDF</p>
-    </div>
-  </div>
-
-  <div class="card-description">
-    <div>
-      <h1 class="title"><%= @book.title %></h1>
-      <h2 class="author"><%= @book.author %></h2>
-        <br>
-      <p class="info">Year: <%= @book.publishing_year%> --  Rating: <%= @book.average_rating %></p>
-    </div>
-      <br>
-    <div>
-      <h2><strong>About This Book</strong></h2>
-        <br>
-      <p>The 19th edition of this market-leading text provides a comprehensive overview of financial accounting and reporting, with the aim of ensuring you are able to prepare and also critically discuss IFRS compliant financial statements. With balanced coverage of theoretical principles and up-to-date practical application of current international standards, the authors provide essential knowledge for advancing your studies and career.</p>
-      <a>Read More</a>
-    </div>
-    <div>
-      <p class="btn btn-show"><%= link_to "Add a Review", book_path(@book) %></p>
-
-      <p class="btn btn-show"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
-    </div>
-  </div>
-
-
-  <div>
-    <% if policy(@book).destroy? %>
-        <p class="btn btn-show"><%= link_to "Delete Book", book_path, method: :delete, data: { confirm: "Are you Sure about Deleting this Book?" } %></p>
-      <% end %>
-
-      <% if policy(@book).edit? %>
-        <p class="btn btn-show"><%= link_to "Edit Book", edit_book_path(@book) %></p>
-    <% end %>
   </div>
 </div>
-

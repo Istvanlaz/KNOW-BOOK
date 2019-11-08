@@ -35,6 +35,43 @@
 }
 
 
+.button-medium-small {
+  margin: 5px;
+  display: flex;
+  color: rgba(240,240,240,0.7);
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  border: 1px solid rgba(240,240,240,0.7);
+  border-radius: 25px;
+}
+
+.button-medium-small:hover {
+  margin: 5px;
+  display: flex;
+  color: rgba(225,225,225,1);
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  border: 1px solid rgba(225,225,225,1);
+  border-radius: 25px;
+}
+
+.button-medium-small a {
+  color: rgba(240,240,240,0.7);
+  text-decoration: none;
+}
+
+.button-medium-small:hover a {
+  color: rgba(225,225,225,1);
+  text-decoration: none;
+}
+
+
 .button-show {
   margin: 10px;
   display: flex;
@@ -42,10 +79,10 @@
   background: transparent;
   justify-content: center;
   align-items: center;
-  width: 210px;
-  height: 50px;
+  width: 165px;
+  height: 40px;
   border: 1px solid rgba(28, 50, 68, 0.8);
-  border-radius: 25px;
+  border-radius: 5px;
 }
 
 .button-show:hover {
@@ -55,8 +92,8 @@
   background: transparent;
   justify-content: center;
   align-items: center;
-  width: 210px;
-  height: 50px;
+  width: 165px;
+  height: 40px;
   border: 1px solid rgba(28, 50, 68, 1);
   border-radius: 25px;
 }
