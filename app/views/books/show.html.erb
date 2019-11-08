@@ -1,4 +1,4 @@
-<div class="container-main">
+<div class="container-main2">
   <div class="banner-small">
     <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="All the Books You Need">
     <div class="txt-ban">
@@ -7,7 +7,6 @@
       <p class="btn button-medium-small"><%= link_to "All books", books_path %></p>
     </div>
   </div>
-
   <div class="container-show">
     <div class="container-left">
       <div class="card-book">
@@ -65,6 +64,8 @@
           <% end %>
         </div>
         <div>
+        <div id="buttons-descr">
+          <p class="btn btn-show"><%= link_to "Add a Review", book_path(@book) %></p>
           <p class="btn btn-show"><%= link_to "Add a Rating", new_book_rating_path(@book) %></p>
         </div>
       </div>
@@ -79,5 +80,4 @@
           <p class="btn btn-show"><%= link_to "Edit Book", edit_book_path(@book) %></p>
       <% end %>
     </div>
-  </div>
 </div>
