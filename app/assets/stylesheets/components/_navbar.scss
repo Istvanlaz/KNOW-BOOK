@@ -12,7 +12,12 @@
   width: 40px;
 }
 .form-inline{
-  vertical-align: center ;
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 .nav-item{
   float: right;
