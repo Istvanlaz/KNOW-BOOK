@@ -25,8 +25,14 @@
     </ul>
   </div>
   <form class="form-inline">
-    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-secondary" color="#E98E5A" type="submit">Search</button>
+    <%= form_tag books_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a book"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
   </form>
   <div class="avatar-spot">
     <% if user_signed_in? %>
