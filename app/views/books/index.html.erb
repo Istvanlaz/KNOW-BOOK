@@ -3,14 +3,15 @@
        <h1 class="title_library">BOOKS LIBRARY</h1>
        <div class="container">
           <div class="row">
-            <% @books.each do |book| %>
-             <div class="card d-flex flex-column align-items-center">
+            <% @books.first(8).each do |book| %>
+             <div class="card d-flex flex-column align-items-center istvan">
                 <img class= "image-card" src="https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial_6th_edition/images/cover-web.png" alt="book-cover" style="width:250px;height:200px;">
               <div class="card-book-info d-flex flex-row justify-content-between align-items-center">
-                <div class="d-flex flex-column justify-content-start">
+                <div class="d-flex flex-column justify-content-start card-infos">
                   <h2 class="card-book-title"><%= book.title %></h2>
-                  <div class="d-flex flex-row justify-content-between align-items-center">
-                    <h4 class="card-book-author"><%= book.author %><%= book.publishing_year %></h4>
+                  <div class="christophe d-flex flex-row justify-content-between align-items-center">
+                    <h4 class="card-book-author"><%= book.author %></h4>
+                      <h7 id="star">⭐ <%= book.average_rating %></h7 id="star">
                     <% if policy(book).show? %>
                       <p><%= link_to "Details", book_path(book), class: 'btn-details' %></p>
                     <% end %>
