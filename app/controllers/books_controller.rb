@@ -3,11 +3,18 @@ class BooksController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def index
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR author ILIKE :query"
+      @books = Book.where(sql_query, query: "%#{params[:query]}%")
+    else
     @books = policy_scope(Book).order(created_at: :desc)
+    end
   end
 
   def show
     @book = Book.find(params[:id])
+    @review = Review.new
+    @reviews = Review.all.where(book_id: @book.id)
   end
 
   def new

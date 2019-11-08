@@ -1,44 +1,131 @@
+
 .banner-small {
-    position: relative;
-    top: 60px;
-    width: 100%;
-    height: 310px;
-    background: linear-gradient(141deg, rgb(245, 245, 245), rgb(201, 205, 205));
-    transition: all 0.75s ease 0s;
-    transition-property: all;
-    transition-duration: 0.75s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
+  position: absolute;
+  top: 110px;
+  width: 100%;
+  height: 245px;
+  background: linear-gradient(141deg, rgb(245, 245, 245), rgb(201, 205, 205));
+  transition: all 0.75s ease 0s;
+  transition-property: all;
+  transition-duration: 0.75s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.banner-small img {
+  display: block;
+  object-fit: cover;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.6) contrast(1.3);
+}
+
+.txt-ban {
+  display: block;
+  position: absolute;
+  color: rgb(240,240,240);
+  width: 50%;
+  font-weight: bold;
+  bottom: 5vh;
+  margin-left: 10%;
+
 }
 
 .container-show {
-
-width: 100%;
-    height: 100%;
-    padding-top: 8px;
-    padding-bottom: 12px;
-    padding-left: 6px;
-    padding-right: 6px;
-
-}
-.card-book {
-
-}
-.card-description {
-
-width: 100%;
-    height: 100%;
-    padding-top: 8px;
-    padding-bottom: 12px;
-    padding-left: 6px;
-    padding-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 
 }
 
-.flexbox {
-  display:flex;
-  justify-content: space-evenly;
+.container-left {
+  position: absolute;
+  top: 360px;
+  left: 0px;
+  width: 30%;
+  height: 100%;
+  padding: 8px 16px;
 }
+
+.container-right {
+  position: absolute;
+  top: 430px;
+  right: 0px;
+  width: 70%;
+  height: 100%;
+  padding: 8px 16px;
+}
+
+.img-book img {
+  display: block;
+  object-fit: cover;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.6) contrast(1.3);
+}
+
+#buttons-descr {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*Media Queries*/
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  .container-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .container-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .container-show {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_one_attached :resume
-
+  has_many :reviews, dependent: :destroy
   validates :title, presence: true
   validates :author, presence: true
   validates :publishing_year, presence: true
