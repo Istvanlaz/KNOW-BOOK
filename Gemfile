@@ -5,7 +5,7 @@ ruby '2.6.3'
 gem "aws-sdk-s3", require: false
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
